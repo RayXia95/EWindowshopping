@@ -5,17 +5,17 @@ The website will keep track of all of their products at all times and alert a us
 
 Requirements
 Users can
-●	Register.
-●	Login/Logout.
-●	Recover their password.
-●	View item listings.
-●	Post a new item.
-●	Buy a listed item.
-●	Receive an order confirmation with their receipt.
-●	View their history of purchases.
+Register.
+Login/Logout.
+Recover their password.
+View item listings.
+Post a new item.
+Buy a listed item.
+Receive an order confirmation with their receipt.
+View their history of purchases.
 
 Optional Requirements
 Users can
-•	Achieve item purchases through a shopping cart.
+Achieve item purchases through a shopping cart.
 
 
