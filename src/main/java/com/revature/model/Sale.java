@@ -22,7 +22,7 @@ public class Sale {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="heroSequence")
 	@SequenceGenerator(name="heroSequence",sequenceName="HERO_SEQ",allocationSize=1)
 	@Column(name="T_ID")
-	private int id;
+	private long id;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="T_TIME")
