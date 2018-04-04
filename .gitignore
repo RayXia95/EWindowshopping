@@ -36,6 +36,7 @@
 *.sqlite
 *.pdf
 /logs
+/src/main/resources/privateRepo.properties
 
 # OS generated files #
 ######################
