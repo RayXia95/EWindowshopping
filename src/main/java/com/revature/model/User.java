@@ -15,7 +15,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
 	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
-	private int id;
+	private long id;
 	
 	@Column(name="U_USERNAME", nullable=false)
 	private String username;
@@ -42,12 +42,12 @@ public class User {
 	private String state;
 	
 	@Column(name="U_ZIP_CODE", nullable=false)
-	private String zipcode;
+	private String zipCode;
 
 	public User() {	}
 
 	public User(String username, String firstName, String lastName, String password, double balance, String street,
-			String town, String state, String zipcode) {
+			String town, String state, String zipCode) {
 		
 		this.username = username;
 		this.firstName = firstName;
@@ -57,10 +57,10 @@ public class User {
 		this.street = street;
 		this.town = town;
 		this.state = state;
-		this.zipcode = zipcode;
+		this.zipCode = zipCode;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -132,18 +132,18 @@ public class User {
 		this.state = state;
 	}
 
-	public String getZipcode() {
-		return zipcode;
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
+	public void setZipcode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", password=" + password + ", balance=" + balance + ", street=" + street + ", town=" + town
-				+ ", state=" + state + ", zipcode=" + zipcode + "]";
+				+ ", state=" + state + ", zipCode=" + zipCode + "]";
 	}
 }
