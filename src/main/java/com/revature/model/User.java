@@ -1,4 +1,4 @@
-package com.ewindowshopping.model;
+package com.revature.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
