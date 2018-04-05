@@ -12,57 +12,69 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "EWS_PRODUCT")
 public class Product {
+	
 	@Id
+	@Column(name = "P_ID")
 	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator = "productSequence")
 	@SequenceGenerator(name ="productSequence", sequenceName="PRODUCT_SEQ", allocationSize=1)
-	@Column(name = "P_ID")
-	private int id;
+	private long id;
 	
 	@Column(name = "P_DESCRIPTION")
 	private String description;
 	
+	@Column(name = "P_NAME")
+	private String name;
+	
 	@Column(name = "P_IMAGE_URL")
 	private String image;
 	
-	@ManyToOne
-	private int sId;
+	@Column(name = "P_PRODUCT_SELLING")
+	private long productSelling;
 	
 	public Product() {}
-	public Product(int id, String description, String image, int userId) {
-		super();
+	
+	public Product(long id, String description, String image, long productSelling) {
 		this.id = id;
 		this.description = description;
 		this.image=image;
-		this.sId = userId;
+		this.productSelling = productSelling;
 	}
-	public int getId() {
+	
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	
+	public void setId(long id) {
 		this.id = id;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getUserId() {
-		return sId;
+	
+	public long getProductSelling() {
+		return productSelling;
 	}
-	public void setUserId(int userId) {
-		this.sId = userId;
+
+	public void setProductSelling(long productSelling) {
+		this.productSelling = productSelling;
 	}
+
 	public String getImage() {
 		return image;
 	}
+	
 	public void setImage(String image) {
 		this.image = image;
 	}
+	
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", description=" + description + ", image=" + image + ", sId=" + sId + "]";
+		return "Product [id=" + id + ", description=" + description + ", image=" + image + ", productSelling=" + productSelling + "]";
 	}
-
 	
 }
