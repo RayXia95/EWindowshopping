@@ -38,8 +38,16 @@ public class Purchase {
 	@Column(name="P_ID")
 	private Product product;
 
-	public Purchase() {}
+	public Purchase() {}	
 	
+	public Purchase(Date time, int quantity, User buyer, Product product) {
+		super();
+		this.time = time;
+		this.quantity = quantity;
+		this.buyer = buyer;
+		this.product = product;
+	}
+
 	public Date getTime() {
 		return time;
 	}
