@@ -5,8 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.mapping.List;
 
 @Entity
 @Table(name="EWS_USER")
@@ -15,7 +18,7 @@ public class User {
 	@Id
 	@Column(name="U_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
-	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
+	@SequenceGenerator(name="userSequence", sequenceName="USER_SEQ", allocationSize=1)
 	private long id;
 	
 	@Column(name="U_USERNAME", nullable=false, unique=true)
@@ -42,21 +45,16 @@ public class User {
 	@Column(name="U_STATE", nullable=false)
 	private String state;
 	
-	//@Column(name="PC_ID")
-	//@ManyToMany
-	//public List<Purchase> purchases;
-	
-	//@Column(name="S_ID")
-	//@ManyToMany
-	//public List<Selling> sold;
+	@Column(name="U_EMAIL", nullable=false, unique=true)
+	private String email;
 	
 	@Column(name="U_ZIP_CODE", nullable=false)
 	private String zipCode;
-
+	
 	public User() {	}
 
 	public User(String username, String firstName, String lastName, String password, double balance, String street,
-			String town, String state, String zipCode) {
+			String town, String state, String email, String zipCode) {
 		
 		this.username = username;
 		this.firstName = firstName;
@@ -66,6 +64,7 @@ public class User {
 		this.street = street;
 		this.town = town;
 		this.state = state;
+		this.email = email;
 		this.zipCode = zipCode;
 	}
 
@@ -141,11 +140,19 @@ public class User {
 		this.state = state;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getZipCode() {
 		return zipCode;
 	}
 
-	public void setZipcode(String zipCode) {
+	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
 
@@ -153,7 +160,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", password=" + password + ", balance=" + balance + ", street=" + street + ", town=" + town
-				+ ", state=" + state + ", zipCode=" + zipCode + "]";
+				+ ", state=" + state + ", email=" + email + ", zipCode=" + zipCode + "]";
 	}
-
+	
 }
