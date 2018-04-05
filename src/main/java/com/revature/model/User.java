@@ -15,7 +15,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
 	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
-	private int id;
+	private long id;
 	
 	@Column(name="U_USERNAME", nullable=false)
 	private String username;
@@ -60,11 +60,11 @@ public class User {
 		this.zipcode = zipcode;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
