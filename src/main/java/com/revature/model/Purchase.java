@@ -71,6 +71,10 @@ public class Purchase {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	//TODO: Generate toString()
+
+	@Override
+	public String toString() {
+		return "Purchase [id=" + id + ", time=" + time + ", quantity=" + quantity + ", buyer=" + buyer + ", product="
+				+ product + "]";
+	}
 }
