@@ -73,6 +73,10 @@ public class Selling {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
-	//TODO: Implement toString()
+
+	@Override
+	public String toString() {
+		return "Selling [id=" + id + ", cost=" + cost + ", quantity=" + quantity + ", seller=" + seller + ", product="
+				+ product + "]";
+	}
 }
