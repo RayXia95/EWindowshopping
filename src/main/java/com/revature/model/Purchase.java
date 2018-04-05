@@ -41,7 +41,6 @@ public class Purchase {
 	public Purchase() {}	
 	
 	public Purchase(Date time, int quantity, User buyer, Product product) {
-		super();
 		this.time = time;
 		this.quantity = quantity;
 		this.buyer = buyer;
