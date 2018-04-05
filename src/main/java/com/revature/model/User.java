@@ -18,7 +18,7 @@ public class User {
 	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
 	private long id;
 	
-	@Column(name="U_USERNAME", nullable=false)
+	@Column(name="U_USERNAME", nullable=false, unique=true)
 	private String username;
 	
 	@Column(name="U_FIRST_NAME", nullable=false)
@@ -32,7 +32,7 @@ public class User {
 	
 	@Column(name="U_BALANCE", nullable=false)
 	private double balance;
-	
+		
 	@Column(name="U_STREET", nullable=false)
 	private String street;
 	
@@ -42,109 +42,19 @@ public class User {
 	@Column(name="U_STATE", nullable=false)
 	private String state;
 	
+	@Column(name="PC_ID")
+	@ManyToMany
+	public List<Purchase> purchases;
+	
+	@Column(name="S_ID")
+	@ManyToMany
+	public List<Selling> sold;
+	
 	@Column(name="U_ZIP_CODE", nullable=false)
 	private String zipCode;
 
 	public User() {	}
 
-	public User(String username, String firstName, String lastName, String password, double balance, String street,
-			String town, String state, String zipCode) {
-		
-		this.username = username;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.password = password;
-		this.balance = balance;
-		this.street = street;
-		this.town = town;
-		this.state = state;
-		this.zipCode = zipCode;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public double getBalance() {
-		return balance;
-	}
-
-	public void setBalance(double balance) {
-		this.balance = balance;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getTown() {
-		return town;
-	}
-
-	public void setTown(String town) {
-		this.town = town;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getZipCode() {
-		return zipCode;
-	}
-
-	public void setZipcode(String zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", password=" + password + ", balance=" + balance + ", street=" + street + ", town=" + town
-				+ ", state=" + state + ", zipCode=" + zipCode + "]";
-	}
+	
+	
 }
