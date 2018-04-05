@@ -13,22 +13,22 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="EWS_TRANSACTION")
-public class Sale {
+@Table(name="EWS_PURCHASE")
+public class Purchase {
 	
-	public Sale() {}
+	public Purchase() {}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="heroSequence")
-	@SequenceGenerator(name="heroSequence",sequenceName="HERO_SEQ",allocationSize=1)
-	@Column(name="T_ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="purchaseSequence")
+	@SequenceGenerator(name="purchaseSequence",sequenceName="PURCHASE_SEQ",allocationSize=1)
+	@Column(name="PC_ID")
 	private long id;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="T_TIME")
+	@Column(name="PC_TIME")
 	private Date time;
 	
-	@Column(name="T_QUANTITY")
+	@Column(name="PC_QUANTITY")
 	private int quantity;
 	
 	@Column(name="U_ID")
