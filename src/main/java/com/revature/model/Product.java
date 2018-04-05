@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "EWS_PROD")
+@Table(name = "EWS_PRODUCT")
 public class Product {
 	@Id
 	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator = "productSequence")
@@ -18,26 +18,22 @@ public class Product {
 	@Column(name = "P_ID")
 	private int id;
 	
-	@Column(name = "P_DESC")
+	@Column(name = "P_DESCRIPTION")
 	private String description;
 	
-	@Column(name = "P_COST", nullable=false)
-	private double cost;
-	
-	@Column(name = "P_QUANT", nullable=false)
-	private int quantity;
+	@Column(name = "P_IMAGE_URL")
+	private String image;
 	
 	@ManyToOne
-	private int userId;
+	private int sId;
 	
 	public Product() {}
-	public Product(int id, String description, double cost, int quantity, int userId) {
+	public Product(int id, String description, String image, int userId) {
 		super();
 		this.id = id;
 		this.description = description;
-		this.cost = cost;
-		this.quantity = quantity;
-		this.userId = userId;
+		this.image=image;
+		this.sId = userId;
 	}
 	public int getId() {
 		return id;
@@ -51,28 +47,22 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getCost() {
-		return cost;
-	}
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 	public int getUserId() {
-		return userId;
+		return sId;
 	}
 	public void setUserId(int userId) {
-		this.userId = userId;
+		this.sId = userId;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", description=" + description + ", cost=" + cost + ", quantity=" + quantity
-				+ ", userId=" + userId + "]";
+		return "Product [id=" + id + ", description=" + description + ", image=" + image + ", sId=" + sId + "]";
 	}
+
 	
 }
