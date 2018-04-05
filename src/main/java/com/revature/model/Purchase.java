@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -30,10 +31,12 @@ public class Purchase {
 	
 	@Column(name="PC_QUANTITY")
 	private int quantity;
-	
+
+	@ManyToOne
 	@Column(name="U_ID")
 	private User buyer;
 	
+	@ManyToOne
 	@Column(name="P_ID")
 	private Product product;
 
