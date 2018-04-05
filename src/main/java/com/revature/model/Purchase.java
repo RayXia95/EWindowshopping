@@ -16,8 +16,6 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="EWS_PURCHASE")
 public class Purchase {
-	
-	public Purchase() {}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="purchaseSequence")
@@ -40,6 +38,8 @@ public class Purchase {
 	@Column(name="P_ID")
 	private Product product;
 
+	public Purchase() {}
+	
 	public Date getTime() {
 		return time;
 	}
