@@ -1,5 +1,7 @@
 package com.revature.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,14 +31,18 @@ public class Product {
 	private String image;
 
 	@OneToMany(mappedBy= "EWS_PURCHASE")
-	private Purchase purchase;
+	private List<User> purchase;
 
 	@OneToMany(mappedBy = "EWS_SELLING")
-	private Selling selling;
+	private List<User> selling;
 
 	public Product() {}
+	
+	
 
-	public Product(long id, String description, String productName, String image, Purchase purchase, Selling selling) {
+	public Product(long id, String description, String productName, String image, List<User> purchase,
+			List<User> selling) {
+		super();
 		this.id = id;
 		this.description = description;
 		this.productName = productName;
@@ -45,24 +51,21 @@ public class Product {
 		this.selling = selling;
 	}
 
-
-	public Purchase getPurchase() {
+	public List<User> getPurchase() {
 		return purchase;
 	}
 
-	public void setPurchase(Purchase purchase) {
+	public void setPurchase(List<User> purchase) {
 		this.purchase = purchase;
 	}
 
-	public Selling getSelling() {
+	public List<User> getSelling() {
 		return selling;
 	}
 
-	public void setSelling(Selling selling) {
+	public void setSelling(List<User> selling) {
 		this.selling = selling;
 	}
-
-
 
 	public long getId() {
 		return id;
@@ -84,8 +87,6 @@ public class Product {
 		this.productName = productName;
 	}
 
-
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -103,9 +104,6 @@ public class Product {
 		return "Product [id=" + id + ", description=" + description + ", productName=" + productName + ", image="
 				+ image + ", purchase=" + purchase + ", selling=" + selling + "]";
 	}
-
-
-
 
 
 }
