@@ -1,10 +1,13 @@
 package com.revature.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,7 +18,7 @@ public class User {
 	@Id
 	@Column(name="U_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
-	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
+	@SequenceGenerator(name="userSequence", sequenceName="USER_SEQ", allocationSize=1)
 	private long id;
 	
 	@Column(name="U_USERNAME", nullable=false)
@@ -29,6 +32,9 @@ public class User {
 	
 	@Column(name="U_PASSWORD", nullable=false)
 	private String password;
+	
+	@Column(name="U_EMAIL", nullable=false, unique=true )
+	private String email;
 	
 	@Column(name="U_BALANCE", nullable=false)
 	private double balance;
@@ -45,20 +51,32 @@ public class User {
 	@Column(name="U_ZIP_CODE", nullable=false)
 	private String zipCode;
 
+	@OneToMany
+	@Column(name="S_ID")
+	private List<Selling> productsSold;
+	
+	@OneToMany
+	@Column(name="PC_ID")
+	private List<Selling> productsPurchased;
+
 	public User() {	}
 
-	public User(String username, String firstName, String lastName, String password, double balance, String street,
-			String town, String state, String zipCode) {
-		
+	public User(String username, String firstName, String lastName, String password, String email, double balance,
+			String street, String town, String state, String zipCode, List<Selling> productsSold,
+			List<Selling> productsPurchased) {
+		super();
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
+		this.email = email;
 		this.balance = balance;
 		this.street = street;
 		this.town = town;
 		this.state = state;
 		this.zipCode = zipCode;
+		this.productsSold = productsSold;
+		this.productsPurchased = productsPurchased;
 	}
 
 	public long getId() {
@@ -101,6 +119,14 @@ public class User {
 		this.password = password;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public double getBalance() {
 		return balance;
 	}
@@ -137,14 +163,32 @@ public class User {
 		return zipCode;
 	}
 
-	public void setZipcode(String zipCode) {
+	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+
+	public List<Selling> getProductsSold() {
+		return productsSold;
+	}
+
+	public void setProductsSold(List<Selling> productsSold) {
+		this.productsSold = productsSold;
+	}
+
+	public List<Selling> getProductsPurchased() {
+		return productsPurchased;
+	}
+
+	public void setProductsPurchased(List<Selling> productsPurchased) {
+		this.productsPurchased = productsPurchased;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", password=" + password + ", balance=" + balance + ", street=" + street + ", town=" + town
-				+ ", state=" + state + ", zipCode=" + zipCode + "]";
+				+ ", password=" + password + ", email=" + email + ", balance=" + balance + ", street=" + street
+				+ ", town=" + town + ", state=" + state + ", zipCode=" + zipCode + ", productsSold=" + productsSold
+				+ ", productsPurchased=" + productsPurchased + "]";
 	}
+	
 }
