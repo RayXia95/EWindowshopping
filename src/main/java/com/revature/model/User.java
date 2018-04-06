@@ -64,7 +64,7 @@ public class User {
 	public User(String username, String firstName, String lastName, String password, String email, double balance,
 			String street, String town, String state, String zipCode, List<Selling> productsSold,
 			List<Selling> productsPurchased) {
-		super();
+		
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
