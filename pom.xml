@@ -27,6 +27,13 @@
 			<artifactId>spring-orm</artifactId>
 	        <version>4.3.9.RELEASE</version>
 	    </dependency>
+	    
+	    <!-- Spring 4 MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.3.9.RELEASE</version>
+		</dependency>
 	
 	    <!-- Hibernate 4 -->
 	    <dependency>
