@@ -31,17 +31,17 @@ public class Product {
 	private String image;
 
 	@OneToMany(mappedBy= "EWS_PURCHASE")
-	private List<User> purchase;
+	private List<Purchase> purchase;
 
 	@OneToMany(mappedBy = "EWS_SELLING")
-	private List<User> selling;
+	private List<Selling> selling;
 
 	public Product() {}
 	
 	
 
-	public Product(long id, String description, String productName, String image, List<User> purchase,
-			List<User> selling) {
+	public Product(long id, String description, String productName, String image, List<Purchase> purchase,
+			List<Selling> selling) {
 		super();
 		this.id = id;
 		this.description = description;
@@ -51,19 +51,19 @@ public class Product {
 		this.selling = selling;
 	}
 
-	public List<User> getPurchase() {
+	public List<Purchase> getPurchase() {
 		return purchase;
 	}
 
-	public void setPurchase(List<User> purchase) {
+	public void setPurchase(List<Purchase> purchase) {
 		this.purchase = purchase;
 	}
 
-	public List<User> getSelling() {
+	public List<Selling> getSelling() {
 		return selling;
 	}
 
-	public void setSelling(List<User> selling) {
+	public void setSelling(List<Selling> selling) {
 		this.selling = selling;
 	}
 
