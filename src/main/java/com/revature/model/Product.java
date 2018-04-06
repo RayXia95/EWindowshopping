@@ -38,11 +38,8 @@ public class Product {
 
 	public Product() {}
 	
-	
-
 	public Product(long id, String description, String productName, String image, List<Purchase> purchase,
 			List<Selling> selling) {
-		super();
 		this.id = id;
 		this.description = description;
 		this.productName = productName;
@@ -104,6 +101,5 @@ public class Product {
 		return "Product [id=" + id + ", description=" + description + ", productName=" + productName + ", image="
 				+ image + ", purchase=" + purchase + ", selling=" + selling + "]";
 	}
-
 
 }
