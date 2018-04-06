@@ -51,11 +51,11 @@ public class User {
 	@Column(name="U_ZIP_CODE", nullable=false)
 	private String zipCode;
 
-	@OneToMany
+	@OneToMany(mappedBy= "seller")
 	@Column(name="S_ID")
 	private List<Selling> productsSold;
 	
-	@OneToMany
+	@OneToMany(mappedBy= "buyer")
 	@Column(name="PC_ID")
 	private List<Selling> productsPurchased;
 
