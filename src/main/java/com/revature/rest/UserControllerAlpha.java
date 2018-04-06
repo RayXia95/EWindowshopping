@@ -1,5 +1,8 @@
 package com.revature.rest;
 
+import static com.revature.util.ClientMessageUtil.REGISTRATION_SUCCESSFUL;
+import static com.revature.util.ClientMessageUtil.SOMETHING_WRONG;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +20,7 @@ public class UserControllerAlpha implements UserController {
 	@Override
 	@PostMapping(value="/registerUser")
 	public ClientMessage registerUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		return (userService.registerUser(user) ? REGISTRATION_SUCCESSFUL : SOMETHING_WRONG);
 	}
 
 }
