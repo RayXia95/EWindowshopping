@@ -30,10 +30,10 @@ public class Product {
 	@Column(name = "P_IMAGE_URL")
 	private String image;
 
-	@OneToMany(mappedBy= "EWS_PURCHASE")
+	@OneToMany(mappedBy= "product")
 	private List<Purchase> purchase;
 
-	@OneToMany(mappedBy = "EWS_SELLING")
+	@OneToMany(mappedBy = "product")
 	private List<Selling> selling;
 
 	public Product() {}

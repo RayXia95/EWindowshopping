@@ -26,11 +26,9 @@ public class Selling {
 	private int quantity;
 	
 	@ManyToOne
-	@Column(name="U_ID")
 	private User seller;
 	
 	@ManyToOne
-	@Column(name="P_ID")
 	private Product product;
 	
 	public Selling() {}

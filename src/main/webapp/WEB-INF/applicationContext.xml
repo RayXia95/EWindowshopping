@@ -21,6 +21,9 @@
 	<context:component-scan base-package="com.revature.service"/>
 	<context:component-scan base-package="com.revature.rest"/>
 	
+	<!-- Register properties file in the application context -->
+	<context:property-placeholder location="classpath:privateRepo.properties" />
+	
 	<!-- Hibernate Integreation with Contextual Sessions -->
 	
 	<bean name = "dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
