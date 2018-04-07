@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.ajax.ClientMessage;
 import com.revature.model.User;
@@ -22,7 +24,7 @@ public class UserControllerAlpha implements UserController {
 	
 	@Override
 	@PostMapping(value="/registerUser")
-	public ClientMessage registerUser(User user) {
+	public @ResponseBody ClientMessage registerUser(@RequestBody User user) {
 		logger.trace("Registering user: " + user);
 		return (userService.registerUser(user) ? REGISTRATION_SUCCESSFUL : SOMETHING_WRONG);
 	}
