@@ -14,6 +14,7 @@ public class UserServiceAlpha implements UserService {
 	
 	@Override
 	public boolean registerUser(User user) {
+		user.setPassword(new Integer(user.getPassword().hashCode()).toString());
 		userRepository.save(user);
 		return (user.getId() != 0);
 	}
