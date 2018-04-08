@@ -15,10 +15,11 @@ import com.revature.service.ProductService;
 public class ProductControllerAlpha implements ProductController {
 	
 	private static Logger logger = Logger.getLogger(ProductControllerAlpha.class);
+	
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/findAllHeroes")
+	@GetMapping("/findAllProducts")
 	public @ResponseBody List<Product> findAllProducts() {
 		return productService.getAllProducts();
 	}
