@@ -14,7 +14,7 @@ import com.revature.model.User;
 @Repository("userRepository")
 public class UserRepositoryHibernate implements UserRepository{
 
-	Logger logger = Logger.getLogger(UserRepositoryHibernate.class);
+	private static Logger logger = Logger.getLogger(UserRepositoryHibernate.class);
 	
 	@Autowired
 	private SessionFactory sessionFactory;

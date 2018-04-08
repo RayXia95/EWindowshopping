@@ -4,4 +4,5 @@ import com.revature.model.User;
 
 public interface UserService {
 	boolean registerUser(User user);
+	User authenticate(User user);
 }
