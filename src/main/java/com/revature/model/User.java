@@ -15,11 +15,14 @@ public class User {
 	@Id
 	@Column(name="U_ID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="userSequence")
-	@SequenceGenerator(name="userSequence", sequenceName="HERO_SEQ", allocationSize=1)
+	@SequenceGenerator(name="userSequence", sequenceName="USER_SEQ", allocationSize=1)
 	private long id;
 	
 	@Column(name="U_USERNAME", nullable=false)
 	private String username;
+	
+	@Column(name="U_EMAIL", nullable=false)
+	private String email;
 	
 	@Column(name="U_FIRST_NAME", nullable=false)
 	private String firstName;
@@ -47,10 +50,11 @@ public class User {
 
 	public User() {	}
 
-	public User(String username, String firstName, String lastName, String password, double balance, String street,
+	public User(String username, String email, String firstName, String lastName, String password, double balance, String street,
 			String town, String state, String zipCode) {
 		
 		this.username = username;
+		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
@@ -75,6 +79,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFirstName() {
@@ -137,7 +149,7 @@ public class User {
 		return zipCode;
 	}
 
-	public void setZipcode(String zipCode) {
+	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
 

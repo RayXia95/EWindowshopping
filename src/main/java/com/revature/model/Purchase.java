@@ -31,11 +31,9 @@ public class Purchase {
 	private int quantity;
 
 	@ManyToOne
-	@Column(name="U_ID")
 	private User buyer;
 	
 	@ManyToOne
-	@Column(name="P_ID")
 	private Product product;
 
 	public Purchase() {}	
