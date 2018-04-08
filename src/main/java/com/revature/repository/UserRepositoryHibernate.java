@@ -4,6 +4,7 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,6 +24,17 @@ public class UserRepositoryHibernate implements UserRepository{
 	@Override
 	public void save(User user) {
 		sessionFactory.getCurrentSession().save(user);
+	}
+
+	@Override
+	public User select(String username) {
+		try {
+			return (User) sessionFactory.getCurrentSession()
+				.createCriteria(User.class)
+				.add(Restrictions.like("username", username).ignoreCase()).list().get(0);
+		} catch (IndexOutOfBoundsException e) {
+			return null;
+		}
 	}
 
 }
