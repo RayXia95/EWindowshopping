@@ -8,10 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.revature.model.Product;
+import com.revature.model.Selling;
 import com.revature.service.ProductService;
 
-@Controller("ProductController")
+@Controller("productController")
 public class ProductControllerAlpha implements ProductController {
 	
 	private static Logger logger = Logger.getLogger(ProductControllerAlpha.class);
@@ -19,8 +19,11 @@ public class ProductControllerAlpha implements ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/findAllProducts")
-	public @ResponseBody List<Product> findAllProducts() {
+	@GetMapping("/getAllProducts")
+	public @ResponseBody List<Selling> findAllProducts() {
+		logger.trace("===================================================================================================");
+		logger.trace("================================In controller======================================================");
+		logger.trace("===================================================================================================");
 		return productService.getAllProducts();
 	}
 

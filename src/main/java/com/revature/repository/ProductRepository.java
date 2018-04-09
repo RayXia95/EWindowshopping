@@ -2,10 +2,10 @@ package com.revature.repository;
 
 import java.util.List;
 
-import com.revature.model.Product;
+import com.revature.model.Selling;
 
 public interface ProductRepository {
 	
-	List<Product> findAll();
+	List<Selling> findAll();
 
 }

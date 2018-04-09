@@ -2,9 +2,9 @@ package com.revature.rest;
 
 import java.util.List;
 
-import com.revature.model.Product;
+import com.revature.model.Selling;
 
 public interface ProductController {
 	
-	List<Product> findAllProducts();
+	List<Selling> findAllProducts();
 }

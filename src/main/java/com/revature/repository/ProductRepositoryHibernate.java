@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.model.Product;
+import com.revature.model.Selling;
 
-@Repository("productRepository")
 @Transactional
+@Repository("productRepository")
 public class ProductRepositoryHibernate implements ProductRepository {
 
 	private static Logger logger = Logger.getLogger(ProductRepositoryHibernate.class);
@@ -20,14 +20,13 @@ public class ProductRepositoryHibernate implements ProductRepository {
 	private SessionFactory sessionFactory;
 	
 	@SuppressWarnings("unchecked")
-	@Override
-	public List<Product> findAll() {
+	public List<Selling> findAll() {
+		logger.trace("===================================================================================================");
+		logger.trace("===================================In DAO==========================================================");
+		logger.trace("===================================================================================================");
+		//logger.trace(sessionFactory.getCurrentSession().createCriteria(Product.class).list() + "=========================");
+		return sessionFactory.getCurrentSession().createCriteria(Selling.class).list();
 		
-		logger.info("====================================================");
-		logger.info("Retrieving List of Products");
-		logger.info("====================================================");
-		
-		return sessionFactory.getCurrentSession().createCriteria(Product.class).list();
 	}
-
+	
 }
