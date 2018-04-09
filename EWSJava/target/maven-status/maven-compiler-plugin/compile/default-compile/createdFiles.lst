@@ -1,0 +1,12 @@
+com\revature\service\UserServiceAlpha.class
+com\revature\rest\UserControllerAlpha.class
+com\revature\model\Product.class
+com\revature\repository\UserRepository.class
+com\revature\model\Purchase.class
+com\revature\service\UserService.class
+com\revature\model\User.class
+com\revature\repository\UserRepositoryHibernate.class
+com\revature\ajax\ClientMessage.class
+com\revature\util\ClientMessageUtil.class
+com\revature\model\Selling.class
+com\revature\rest\UserController.class

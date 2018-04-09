@@ -48,3 +48,6 @@
 ehthumbs.db
 Thumbs.db
 
+# Angular Dependencies #
+########################
+/ews-angular/node_modules
