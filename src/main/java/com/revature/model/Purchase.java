@@ -2,6 +2,7 @@ package com.revature.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,10 +31,10 @@ public class Purchase {
 	@Column(name="PC_QUANTITY")
 	private int quantity;
 
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private User buyer;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Product product;
 
 	public Purchase() {}	
