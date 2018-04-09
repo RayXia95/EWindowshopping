@@ -1,0 +1,27 @@
+package com.revature.rest;
+
+import static com.revature.util.FinalUtil.PURCHASE_SUCCESSFUL;
+import static com.revature.util.FinalUtil.SOMETHING_WRONG;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.revature.ajax.ClientMessage;
+import com.revature.model.Purchase;
+import com.revature.service.PurchaseService;
+@Controller("purchaseController")
+public class PurchaseControllerAlpha implements PurchaseController {
+	@Autowired
+	PurchaseService purchaseService;
+
+	@PostMapping(value="/purchase")
+	public @ResponseBody ClientMessage purchaseProduct(@RequestBody Purchase purchase) {
+		System.out.println("testing");
+		return (purchaseService.purchaseProduct(purchase) ? PURCHASE_SUCCESSFUL:SOMETHING_WRONG);
+	}
+
+
+}
