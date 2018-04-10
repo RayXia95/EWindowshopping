@@ -1,5 +1,6 @@
 package com.revature.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,10 +26,10 @@ public class Selling {
 	@Column(name="S_QUANTITY")
 	private int quantity;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private User seller;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Product product;
 	
 	public Selling() {}
