@@ -1,7 +1,7 @@
 package com.revature.rest;
 
-import static com.revature.util.FinalUtil.PURCHASE_SUCCESSFUL;
-import static com.revature.util.FinalUtil.SOMETHING_WRONG;
+import static com.revature.util.ClientMessageUtil.PURCHASE_SUCCESSFUL;
+import static com.revature.util.ClientMessageUtil.SOMETHING_WRONG;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

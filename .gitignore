@@ -23,7 +23,7 @@
 # Eclipse Setting #
 ###################
 
-/target
+/EWSJava/target
 *.classpath
 *.project
 *.settings
@@ -47,4 +47,3 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
