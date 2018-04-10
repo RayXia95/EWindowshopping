@@ -14,17 +14,12 @@ import com.revature.model.Selling;
 @Repository("productRepository")
 public class ProductRepositoryHibernate implements ProductRepository {
 
-	private static Logger logger = Logger.getLogger(ProductRepositoryHibernate.class);
-	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@SuppressWarnings("unchecked")
 	public List<Selling> findAll() {
-		logger.trace("===================================================================================================");
-		logger.trace("===================================In DAO==========================================================");
-		logger.trace("===================================================================================================");
-		//logger.trace(sessionFactory.getCurrentSession().createCriteria(Product.class).list() + "=========================");
+		
 		return sessionFactory.getCurrentSession().createCriteria(Selling.class).list();
 		
 	}

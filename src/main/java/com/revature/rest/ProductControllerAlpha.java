@@ -14,17 +14,14 @@ import com.revature.service.ProductService;
 @Controller("productController")
 public class ProductControllerAlpha implements ProductController {
 	
-	private static Logger logger = Logger.getLogger(ProductControllerAlpha.class);
-	
 	@Autowired
 	private ProductService productService;
 	
 	@GetMapping("/getAllProducts")
 	public @ResponseBody List<Selling> findAllProducts() {
-		logger.trace("===================================================================================================");
-		logger.trace("================================In controller======================================================");
-		logger.trace("===================================================================================================");
+		
 		return productService.getAllProducts();
+	
 	}
 
 }
