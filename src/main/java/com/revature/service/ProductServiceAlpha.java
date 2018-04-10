@@ -10,14 +10,11 @@ import com.revature.repository.ProductRepository;
 
 @Service("productService")
 public class ProductServiceAlpha implements ProductService {
-	
 	@Autowired
 	private ProductRepository productRepository;
 	
 	public List<Selling> getAllProducts() {
-		
 		return productRepository.findAll();
-
 	}
 
 }
