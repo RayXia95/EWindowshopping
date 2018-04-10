@@ -1,0 +1,26 @@
+package com.revature.rest;
+
+import static com.revature.util.FinalUtil.SELL_SUCCESSFUL;
+import static com.revature.util.FinalUtil.SOMETHING_WRONG;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.revature.ajax.ClientMessage;
+import com.revature.model.Selling;
+import com.revature.service.SellingService;
+@Controller("sellingController")
+public class SellingControllerAlpha implements SellingController {
+
+	@Autowired
+	SellingService sellingService;
+
+	@PostMapping(value="/selling")
+	public @ResponseBody ClientMessage sellingProduct(@RequestBody Selling selling) {
+		return (sellingService.sellProduct(selling) ? SELL_SUCCESSFUL:SOMETHING_WRONG);
+	}
+
+}
