@@ -17,7 +17,7 @@
           <div *ngIf="userData">
               {{ userData.firstName }}
           </div>
-          <div *ngIf="!userData">
+          <div *ngIf="clientMessage.message">
               {{ clientMessage.message }}
           </div>
       </div>

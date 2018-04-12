@@ -22,10 +22,13 @@ export class LoginComponent {
   public login(): void {
     this.loginService.login(this.user).subscribe(
       data => {
-        if(data instanceof User){
-          this.userData = data;
-        } else if (data instanceof ClientMessage) {
-          this.clientMessage = data;
+        if(data.hasOwnProperty("username")){
+          this.userData = <User>data;
+          sessionStorage.setItem("loggedUser",JSON.stringify(this.userData));
+          this.clientMessage.message = "Login Success";
+          console.log(<User>JSON.parse(sessionStorage.getItem("loggedUser")).username);
+        } else if (data.hasOwnProperty("message")) {
+          this.clientMessage.message = (<ClientMessage>data).message;
         } else {
           this.clientMessage.message = "Invalid Object";
         }
