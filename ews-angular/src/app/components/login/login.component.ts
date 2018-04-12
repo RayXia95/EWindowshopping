@@ -26,7 +26,7 @@ export class LoginComponent {
           this.userData = <User>data;
           sessionStorage.setItem("loggedUser",JSON.stringify(this.userData));
           this.clientMessage.message = "Login Success";
-          console.log(<User>JSON.parse(sessionStorage.getItem("loggedUser")).username);
+          //console.log(<User>JSON.parse(sessionStorage.getItem("loggedUser")).username);
         } else if (data.hasOwnProperty("message")) {
           this.clientMessage.message = (<ClientMessage>data).message;
         } else {
