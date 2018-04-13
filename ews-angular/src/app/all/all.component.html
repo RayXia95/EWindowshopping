@@ -6,11 +6,12 @@
   <div class="list-group">
       <div class="list-group-item list-group-item-demo">
          <div *ngFor="let selling of sellings" class="list-group-item">
-             <strong>ID</strong>: {{ selling.id }},
-             <strong>Name</strong>: {{ selling.productName }},
-             <strong>Cost</strong>:$ {{ selling.cost }},
-             <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }},
-             <strong>Description</strong>: {{selling.description}}
+             <strong>Product ID</strong>: {{ selling.product.id }}<br>,
+             <strong>Name</strong>: {{ selling.product.productName }}<br>,
+             <strong>User Selling Item</strong>: {{ selling.seller.username }}<br>,
+             <strong>Cost</strong>:$ {{ selling.cost }}<br>,
+             <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}<br>,
+             <strong>Description</strong>: {{selling.product.description}}
          </div>
          <div>
               <button class="btn btn-primary btn-center" (click)="findAllSellings()">GET</button>

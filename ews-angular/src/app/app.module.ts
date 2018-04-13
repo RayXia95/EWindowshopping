@@ -8,11 +8,14 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AllComponent } from './all/all.component';
+import { SellingService } from './services/selling.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AllComponent,
     NavComponent,
     LoginComponent
   ],
@@ -22,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,SellingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
