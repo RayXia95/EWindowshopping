@@ -6,3 +6,5 @@
 export const environment = {
   production: false
 };
+
+export const EWS_URL = "http://localhost:8085/ewindowshopping/";
