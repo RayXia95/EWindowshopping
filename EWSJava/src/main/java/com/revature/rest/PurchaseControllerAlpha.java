@@ -5,6 +5,7 @@ import static com.revature.util.ClientMessageUtil.SOMETHING_WRONG;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,8 @@ import com.revature.ajax.ClientMessage;
 import com.revature.model.Purchase;
 import com.revature.service.PurchaseService;
 @Controller("purchaseController")
+@CrossOrigin(origins = {"http://localhost:4200"})
+
 public class PurchaseControllerAlpha implements PurchaseController {
 	@Autowired
 	PurchaseService purchaseService;
