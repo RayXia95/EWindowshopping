@@ -16,27 +16,32 @@ export class RegisterComponent {
   constructor(private loginService: LoginService) { }
 
   public user: User = new User(0,"","","","","",0,"","","","");
+  public repeatPassword: string = "";
   public userData: User = new User(0,"","","","","",0,"","","","");
 
   public clientMessage: ClientMessage = new ClientMessage("");
 
   public register(): void {
-    this.loginService.register(this.user).subscribe(
-      data => {
-        if (data.hasOwnProperty("message")) {
-          if((<ClientMessage>data).message)
-          this.clientMessage.message = (<ClientMessage>data).message;
-          if(this.clientMessage.message === "REGISTRATION SUCCESSFUL"){
-            this.login();
+    if(this.repeatPassword === this.user.password) {
+      this.loginService.register(this.user).subscribe(
+        data => {
+          if (data.hasOwnProperty("message")) {
+            if((<ClientMessage>data).message)
+            this.clientMessage.message = (<ClientMessage>data).message;
+            if(this.clientMessage.message === "REGISTRATION SUCCESSFUL"){
+              this.login();
+            }
+          } else {
+            this.clientMessage.message = "Invalid Object";
           }
-        } else {
-          this.clientMessage.message = "Invalid Object";
+        },
+        error => {
+          this.clientMessage.message = "Something went wrong"
         }
-      },
-      error => {
-        this.clientMessage.message = "Something went wrong"
-      }
-    );
+      );
+    } else {
+      this.clientMessage.message = "Your passwords do not match.";
+    }
   }
 
   public login(): void {
