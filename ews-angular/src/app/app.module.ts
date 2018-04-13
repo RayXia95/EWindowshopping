@@ -8,13 +8,16 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { PurchaseService } from './service/purchase.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    PurchaseComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,PurchaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

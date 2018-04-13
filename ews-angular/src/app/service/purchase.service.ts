@@ -3,7 +3,7 @@ import { Observable } from "rxjs/Observable";
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/Rx';
 import { Purchase } from '../models/purchase.model';
-import { EWC_URL } from '../../environments/environment';
+import { EWS_URL } from '../../environments/environment';
 import { ClientMessage } from '../models/client-message.model'; 
 
 
@@ -14,7 +14,7 @@ export class PurchaseService {
 
   public purchaseProduct(purchase:Purchase): Observable<ClientMessage>{
     return this.http
-    .post(`${EWC_URL}purchase`,purchase)
+    .post(`${EWS_URL}purchase`,purchase)
     .catch(this.handleError);
   }
   private handleError(error: Response){
