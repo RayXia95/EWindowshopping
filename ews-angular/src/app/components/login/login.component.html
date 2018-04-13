@@ -14,9 +14,6 @@
           <div>
               <button class="btn btn-primary btn-center" (click)="login()">Login</button>
           </div>
-          <div *ngIf="userData">
-              {{ userData.firstName }}
-          </div>
           <div *ngIf="clientMessage.message">
               {{ clientMessage.message }}
           </div>
