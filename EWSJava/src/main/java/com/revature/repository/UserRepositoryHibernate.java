@@ -25,6 +25,11 @@ public class UserRepositoryHibernate implements UserRepository{
 	public void save(User user) {
 		sessionFactory.getCurrentSession().save(user);
 	}
+	
+	@Override
+	public void update(User user) {
+		sessionFactory.getCurrentSession().saveOrUpdate(user);
+	}
 
 	@Override
 	public User select(String username) {
@@ -36,5 +41,4 @@ public class UserRepositoryHibernate implements UserRepository{
 			return null;
 		}
 	}
-
 }

@@ -9,11 +9,19 @@ import com.revature.model.Purchase;
 import com.revature.model.Selling;
 import com.revature.model.User;
 import com.revature.repository.PurchaseRepository;
+import com.revature.repository.SellingRepository;
+import com.revature.repository.UserRepository;
 @Repository("purchaseService")
 public class PurchaseServiceAlpha implements PurchaseService{
 	
 	@Autowired
 	PurchaseRepository purchaseRepository;
+	
+	@Autowired
+	UserRepository userRepository;
+	
+	@Autowired
+	SellingRepository sellingRepository;
 
 	@Override
 	public boolean purchaseProduct(Purchase purchase) {
@@ -32,10 +40,14 @@ public class PurchaseServiceAlpha implements PurchaseService{
 			double balanceChange = purchase.getQuantity() * selling.getCost();
 			buyer.setBalance(buyer.getBalance() - balanceChange);
 			seller.setBalance(seller.getBalance() + balanceChange);
-
 			selling.setQuantity(selling.getQuantity() - purchase.getQuantity());
 
+			//Updating the database with changes
+			userRepository.update(buyer);
+			userRepository.update(seller);
+			sellingRepository.update(selling);
 			purchaseRepository.save(purchase);
+			
 			return purchase.getBuyer().getId() != 0;
 		}	
 	}

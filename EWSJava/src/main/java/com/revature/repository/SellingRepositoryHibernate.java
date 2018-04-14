@@ -11,13 +11,18 @@ import com.revature.model.Selling;
 @Repository("sellingRepository")
 public class SellingRepositoryHibernate implements SellingRepository {
 	private static Logger logger= Logger.getLogger(SellingRepositoryHibernate.class);
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
 	public void save(Selling selling) {
 		sessionFactory.getCurrentSession().save(selling);
+	}
 
+	@Override
+	public void update(Selling selling) {
+		sessionFactory.getCurrentSession().saveOrUpdate(selling);
 	}
 
 }
