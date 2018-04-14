@@ -8,21 +8,27 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SellingComponent } from './components/selling/selling.component';
+import { SellingService } from './services/selling.service';
+import { ImageUploadModule } from "angular2-image-upload";
+import { UploadService } from './services/upload.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    SellingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ImageUploadModule.forRoot(),
   ],
-  providers: [LoginService],
+  providers: [LoginService, SellingService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
