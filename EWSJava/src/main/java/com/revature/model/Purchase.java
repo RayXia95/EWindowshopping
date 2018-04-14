@@ -35,15 +35,15 @@ public class Purchase {
 	private User buyer;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	private Product product;
+	private Selling selling;
 
 	public Purchase() {}	
 	
-	public Purchase(Date time, int quantity, User buyer, Product product) {
+	public Purchase(Date time, int quantity, User buyer, Selling selling) {
 		this.time = time;
 		this.quantity = quantity;
 		this.buyer = buyer;
-		this.product = product;
+		this.selling = selling;
 	}
 
 	public Date getTime() {
@@ -70,17 +70,17 @@ public class Purchase {
 		this.buyer = buyer;
 	}
 
-	public Product getProduct() {
-		return product;
+	public Selling getSelling() {
+		return selling;
 	}
 
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setSelling(Selling selling) {
+		this.selling = selling;
 	}
 
 	@Override
 	public String toString() {
-		return "Purchase [id=" + id + ", time=" + time + ", quantity=" + quantity + ", buyer=" + buyer + ", product="
-				+ product + "]";
+		return "Purchase [id=" + id + ", time=" + time + ", quantity=" + quantity + ", buyer=" + buyer + ", selling="
+				+ selling + "]";
 	}
 }

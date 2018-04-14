@@ -1,5 +1,7 @@
 package com.revature.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -31,6 +34,9 @@ public class Selling {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	private Product product;
+	
+	@OneToMany(mappedBy= "selling")
+	private List<Purchase> purchases;
 	
 	public Selling() {}
 	
