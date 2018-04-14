@@ -10,7 +10,7 @@ import { Selling } from '../models/selling.model';
 })
 export class AllComponent implements OnInit {
     title = 'All Products for Sale';
-
+    
     ngOnInit() {
       this.findAllSelling();
     }

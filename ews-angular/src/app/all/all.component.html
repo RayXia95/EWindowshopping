@@ -6,13 +6,29 @@
   <div class="list-group">
       <div class="list-group-item list-group-item-demo">
          <div *ngFor="let selling of sellings" class="list-group-item">
-             <strong>Product ID</strong>: {{ selling.product.id }}<br>,
-             <strong>Name</strong>: {{ selling.product.productName }}<br>,
-             <strong>User Selling Item</strong>: {{ selling.seller.username }}<br>,
-             <strong>Cost</strong>:$ {{ selling.cost }}<br>,
-             <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}<br>,
-             <strong>Description</strong>: {{selling.product.description}}
-         </div>
+             
+             <div class = "table">
+                 <table>
+                     <tr>
+                       <td class="tabledata"> 
+                           <img class="img-thumbnail img-fluid rounded-float-left" src= {{selling.product.image}} alt="Image Not Found">
+                       </td>
+                       <td class="tabledata">
+                            <strong>Product ID</strong>: {{ selling.product.id }}<br>
+                            <strong>Name</strong>: {{ selling.product.productName }}<br>
+                            <strong>User Selling Item</strong>: {{ selling.seller.username }}<br>
+                            <strong>Cost</strong>: ${{ selling.cost }}<br>
+                            <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}<br>
+                            <strong>Description</strong>: {{selling.product.description}}
+                        
+                            <button class="btn btn-primary btn-center" href="login">Buy</button>
+                        </td>
+                    </tr>
+    
+                </table>
+            
+            </div>
+        </div>
          <div>
               <button class="btn btn-primary btn-center" (click)="findAllSellings()">GET</button>
          </div>
