@@ -11,6 +11,8 @@ import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AllComponent } from './all/all.component';
 import { SellingService } from './services/selling.service';
+import { RegisterComponent } from './components/register/register.component';
+
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SellingService } from './services/selling.service';
     AppComponent,
     AllComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
