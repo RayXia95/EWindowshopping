@@ -20,7 +20,25 @@ export class LoginService {
                 .catch(this.handleError);
   }
 
+  public register(user: User) : Observable<ClientMessage> {
+    return this.http
+                .post(`${EWS_URL}registerUser`,user)
+                .catch(this.handleError);
+  }
+
   public handleError(error: Response) {
     return Observable.throw(error.statusText);
+  }
+
+  public getLoggedUser(): User {
+    let str = sessionStorage.getItem("loggedUser");
+
+    if(str){
+      let obj: Object = <Object>JSON.parse(str);
+      if(obj.hasOwnProperty("username")){
+        return <User>obj;
+      }
+    }
+    return null;
   }
 }

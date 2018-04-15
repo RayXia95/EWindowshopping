@@ -9,6 +9,7 @@ import { Selling } from '../models/selling.model';
 import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
 
+
 @Injectable()
 export class SellingService {
   FOLDER = 'images/';
@@ -20,7 +21,14 @@ export class SellingService {
     .post(`${EWS_URL}selling`,selling)
     .catch(this.handleError);
   }
-  private handleError(error: Response){
+
+  public findAllProducts(): Observable<Selling[]> { 
+    return this.http
+      .get(`${EWS_URL}getAllProducts`)
+      .catch(this.handleError);
+  }
+
+  private handleError(error: Response) {
     return Observable.throw(error.statusText);
   }
 }
