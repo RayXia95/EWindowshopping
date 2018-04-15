@@ -8,15 +8,17 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
     LoginComponent,
     RegisterComponent,
-    NavComponent
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
