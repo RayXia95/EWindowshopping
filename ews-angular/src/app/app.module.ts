@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './components/logout/logout.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     AppComponent,
     NavComponent,
     LoginComponent,
+    RegisterComponent,
     LogoutComponent
   ],
   imports: [
