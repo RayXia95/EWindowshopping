@@ -5,15 +5,19 @@ body{
 .panel{
     min-width: 500px;
 }
+.img-col{
+
+}
 .tabledata{
     margin:250px;
-    padding: 10px; 
+    padding-top: 10px; 
+    padding-left: 60px;
+    padding-right: 50px;
     word-break: break-word;
 }
 .panel-body  {
     word-break: break-all;
 }
-
 .panel-heading {
     background-color: #99ccff;
 }
