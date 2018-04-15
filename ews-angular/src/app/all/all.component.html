@@ -21,7 +21,7 @@
                             <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}<br>
                             <strong>Description</strong>: {{selling.product.description}}
                         
-                            <button class="btn btn-primary btn-center" href="login">Buy</button>
+                            <button class="btn btn-primary btn-center" (click)="openModal(selling, sellingModal)">VIEW</button>
                         </td>
                     </tr>
     
@@ -40,3 +40,21 @@
 </div>
 <div class="panel-footer">
 </div>
+<ng-template #sellingModal>
+    <div class="modal-header">
+        <h4 class="modal-title">EWS</h4>
+    </div>
+    <div class="modal-body">
+        <img class="img-thumbnail img-fluid rounded-float-left" src= {{selling.product.image}} alt="Image Not Found">
+        <div>Product ID: {{ selling.product.id }}</div>
+        <div>Product Name: {{ selling.product.productName }}</div>
+        <div>Cost: $ {{ selling.cost }}</div>
+        <div>Quantity:  {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}</div>
+        <div>Description: {{selling.product.description}}</div>
+    </div>
+    <div class="modal-footer">
+        <div *ngIf ="selling.quantity > 0">
+            <button class="btn btn-primary btn-center">Buy</button>
+        </div>
+    </div>   
+</ng-template>
