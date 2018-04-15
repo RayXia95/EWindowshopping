@@ -2,11 +2,14 @@ package com.revature.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -30,6 +33,7 @@ public class Product {
 	@Column(name = "P_IMAGE_URL")
 	private String image;
 
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "product")
 	private List<Selling> selling;
 
@@ -49,6 +53,22 @@ public class Product {
 
 	public void setSelling(List<Selling> selling) {
 		this.selling = selling;
+=======
+	@ManyToOne(cascade=CascadeType.ALL)
+	private User seller;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Product product;
+
+	public Product() {}
+
+	public Product(String description, String productName, String image, User seller, Product product) {
+		this.description = description;
+		this.productName = productName;
+		this.image = image;
+		this.seller = seller;
+		this.product = product;
+>>>>>>> 8d6a55791e82a72eeec7108186a443ec0a63929f
 	}
 
 	public long getId() {
@@ -63,16 +83,16 @@ public class Product {
 		return description;
 	}
 
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getProductName() {
 		return productName;
 	}
 
 	public void setProductName(String productName) {
 		this.productName = productName;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public String getImage() {
@@ -83,10 +103,30 @@ public class Product {
 		this.image = image;
 	}
 
+	public User getSeller() {
+		return seller;
+	}
+
+	public void setSeller(User seller) {
+		this.seller = seller;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", description=" + description + ", productName=" + productName + ", image="
+<<<<<<< HEAD
 				+ image + "]";
+=======
+				+ image + ", seller=" + seller + ", product=" + product + "]";
+>>>>>>> 8d6a55791e82a72eeec7108186a443ec0a63929f
 	}
 
 }

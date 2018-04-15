@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule }  from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+//import { ModalModule } from 'ngx-bootstrap/modal'; 
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -15,6 +16,7 @@ import { PurchaseService } from './services/purchase.service';
 @NgModule({
   declarations: [
     AppComponent,
+    //AllComponent,
     NavComponent,
     LoginComponent,
     PurchaseComponent
@@ -23,6 +25,7 @@ import { PurchaseService } from './services/purchase.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    //ModalModule.forRoot(),
     HttpClientModule
   ],
   providers: [LoginService,PurchaseService],

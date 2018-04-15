@@ -1,15 +1,34 @@
+body{
+    background-image: url("./images/windshoppe.jpg");
+    background-size: cover;
+}
+.panel{
+    min-width: 500px;
+}
+.img-col{
+
+}
+.tabledata{
+    margin:250px;
+    padding-top: 10px; 
+    padding-left: 60px;
+    padding-right: 50px;
+    word-break: break-word;
+}
 .panel-body  {
     word-break: break-all;
 }
-
 .panel-heading {
-    background-color: #d9d9d9;
+    background-color: #99ccff;
 }
 
 .panel-footer {
-    background-color: #d9d9d9;
+    background-color: #99ccff;
 }
-
+.img-fluid{
+    max-width: 200px;
+    max-height: 700px;
+}
 .image-center {
     display: block;
     margin-left: auto;
