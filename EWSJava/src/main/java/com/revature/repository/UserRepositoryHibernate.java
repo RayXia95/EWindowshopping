@@ -37,4 +37,10 @@ public class UserRepositoryHibernate implements UserRepository{
 		}
 	}
 
+	@Override
+	public void update(User buyer) {
+		sessionFactory.getCurrentSession().saveOrUpdate(buyer);
+		
+	}
+
 }
