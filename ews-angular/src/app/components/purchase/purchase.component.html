@@ -1,0 +1,27 @@
+<div>
+        <div class="panel-heading">
+            <span class="label label-default label-center"></span>
+        </div>
+        <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item list-group-item-demo">
+                <div class="form-group">
+                  <div class="list-group-item">
+                      <!-- <strong>ID</strong>: {{product.id}}, -->
+                      <strong>Name</strong>: {{ product2.productName}},
+                      <strong>Description</strong>: {{ product2.description}},
+                      <img src="/assets/images/{{product2.image}}"/><strong></strong>
+                      <strong>Time</strong>: {{purchase.time}}
+                  </div>
+                </div>
+                <button class ="btn btn-primary btn-center"(click)= "purchaseProduct()">Buy</button>
+                <div>
+                    {{ clientMessage.message }}
+                </div>
+                
+                   
+            </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+      </div>
