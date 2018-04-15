@@ -22,7 +22,7 @@ public class PurchaseControllerAlpha implements PurchaseController {
 
 	@PostMapping(value="/purchase")
 	public @ResponseBody ClientMessage purchaseProduct(@RequestBody Purchase purchase) {
-		System.out.println("testing");
+		System.out.println("@@@@@@@@this is in the controller!!!!! "+purchase);
 		return (purchaseService.purchaseProduct(purchase) ? PURCHASE_SUCCESSFUL:SOMETHING_WRONG);
 	}
 

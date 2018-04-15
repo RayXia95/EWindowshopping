@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PurchaseComponent } from './components/purchase/purchase.component';
-import { PurchaseService } from './service/purchase.service';
+import { PurchaseService } from './services/purchase.service';
 
 
 @NgModule({

@@ -30,30 +30,17 @@ public class Product {
 	@Column(name = "P_IMAGE_URL")
 	private String image;
 
-	@OneToMany(mappedBy= "product")
-	private List<Purchase> purchase;
-
 	@OneToMany(mappedBy = "product")
 	private List<Selling> selling;
 
 	public Product() {}
 	
-	public Product(long id, String description, String productName, String image, List<Purchase> purchase,
-			List<Selling> selling) {
+	public Product(long id, String description, String productName, String image, List<Selling> selling) {
 		this.id = id;
 		this.description = description;
 		this.productName = productName;
 		this.image = image;
-		this.purchase = purchase;
 		this.selling = selling;
-	}
-
-	public List<Purchase> getPurchase() {
-		return purchase;
-	}
-
-	public void setPurchase(List<Purchase> purchase) {
-		this.purchase = purchase;
 	}
 
 	public List<Selling> getSelling() {
@@ -99,7 +86,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", description=" + description + ", productName=" + productName + ", image="
-				+ image + ", purchase=" + purchase + ", selling=" + selling + "]";
+				+ image + "]";
 	}
 
 }

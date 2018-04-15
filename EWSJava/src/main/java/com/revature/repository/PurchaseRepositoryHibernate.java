@@ -18,6 +18,7 @@ public class PurchaseRepositoryHibernate implements PurchaseRepository {
 
 	@Override
 	public void save(Purchase purchase) {
+		System.out.println("TESTING TESTING TESTING");
 		sessionFactory.getCurrentSession().save(purchase);
 	}
 
