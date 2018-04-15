@@ -11,6 +11,7 @@ import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AllComponent } from './all/all.component';
 import { SellingService } from './services/selling.service';
+import { LogoutComponent } from './components/logout/logout.component';
 import { RegisterComponent } from './components/register/register.component';
 
 
@@ -22,7 +23,7 @@ import { RegisterComponent } from './components/register/register.component';
     NavComponent,
     LoginComponent,
     RegisterComponent,
-    NavComponent
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
