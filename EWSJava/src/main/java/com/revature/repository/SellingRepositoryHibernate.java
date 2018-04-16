@@ -20,4 +20,10 @@ public class SellingRepositoryHibernate implements SellingRepository {
 
 	}
 
+	@Override
+	public void update(Selling selling) {
+		sessionFactory.getCurrentSession().saveOrUpdate(selling);
+		
+	}
+
 }
