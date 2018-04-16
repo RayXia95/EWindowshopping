@@ -1,4 +1,6 @@
 
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule }  from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -38,3 +40,4 @@ import { PurchaseService } from './services/purchase.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
