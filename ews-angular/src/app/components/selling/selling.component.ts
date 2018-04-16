@@ -25,13 +25,11 @@ export class SellingComponent {
     );
 
   }
-
   //Uploads image to S3
   public onChange(event){
     let file =event.target.files[0];
     this.product.image = file.name;
     this.uploadService.uploadfile(file);
-
   }
 
 }
