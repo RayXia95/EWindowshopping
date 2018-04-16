@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'selling', component: SellingComponent},
   { path: 'purchase', component:PurchaseComponent}
 ];
- 
+
 @NgModule({
   imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
   exports: [ RouterModule ]
