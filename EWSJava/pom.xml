@@ -15,12 +15,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- Log4j -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
 
 		<!-- Spring 4 ORM -->
 		<dependency>
@@ -44,13 +38,6 @@
 		</dependency>
 
 		<!-- OJDBC 7 LOCAL REPO -->
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc7</artifactId>
-			<version>12.1.0</version>
-		</dependency>
-
-		<!-- OJDB7 Local Maven Repository -->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
