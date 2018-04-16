@@ -1,8 +1,9 @@
+//Added missing lines
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule }  from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-//import { ModalModule } from 'ngx-bootstrap/modal'; 
+import { ModalModule } from 'ngx-bootstrap/modal'; 
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -15,16 +16,21 @@ import { ImageUploadModule } from "angular2-image-upload";
 import { UploadService } from './services/upload.service';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PurchaseService } from './services/purchase.service';
+import { RegisterComponent } from './components/register/register.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AllComponent } from './all/all.component';
 
 
 @NgModule({
   declarations: [
+    AllComponent,
     AppComponent,
-    //AllComponent,
     NavComponent,
     LoginComponent,
     SellingComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,10 @@ import { PurchaseService } from './services/purchase.service';
     FormsModule,
     HttpClientModule,
     ImageUploadModule.forRoot(),
+    ModalModule.forRoot()
   ],
-  providers: [LoginService, SellingService, UploadService],
-    //ModalModule.forRoot(),
+  providers: [LoginService, SellingService, UploadService,PurchaseService],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }
