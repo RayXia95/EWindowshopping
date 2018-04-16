@@ -16,15 +16,21 @@ import { ImageUploadModule } from "angular2-image-upload";
 import { UploadService } from './services/upload.service';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PurchaseService } from './services/purchase.service';
+import { RegisterComponent } from './components/register/register.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AllComponent } from './all/all.component';
 
 
 @NgModule({
   declarations: [
+    AllComponent,
     AppComponent,
     NavComponent,
     LoginComponent,
     SellingComponent,
-    PurchaseComponent
+    PurchaseComponent,
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,10 @@ import { PurchaseService } from './services/purchase.service';
     FormsModule,
     HttpClientModule,
     ImageUploadModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [LoginService, SellingService, UploadService,PurchaseService],
-    //ModalModule.forRoot(),
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }
