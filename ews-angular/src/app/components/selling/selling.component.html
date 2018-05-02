@@ -1,0 +1,24 @@
+<div>
+  <div class="panel-heading">
+      <span class="label label-default label-center">{{title}}</span>
+  </div>
+  <div class="panel-body">
+  <div class="list-group">
+      <div class="list-group-item list-group-item-demo">
+          <div class="form-group">
+            <input [(ngModel)] = "selling.cost" placeholder="$cost" class="form-control"/>
+            <input [(ngModel)] = "selling.quantity" placeholder="quantity" class="form-control"/>
+            <input [(ngModel)] = "selling.product.productName" placeholder="product name" class="form-control"/>
+            <input [(ngModel)] = "selling.product.description" placeholder="description" class="form-control"/>
+            <image-upload (change)="onChange($event)" id="selectFile"></image-upload>
+          </div>
+          <button class ="btn btn-primary btn-center"(click)= "sellingProduct()">Sell</button>
+          <div>
+              {{ clientMessage.message }}
+          </div>
+          
+      </div>
+  </div>
+</div>
+<div class="panel-footer">
+</div>

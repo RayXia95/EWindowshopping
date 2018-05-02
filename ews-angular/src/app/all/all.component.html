@@ -10,8 +10,8 @@
              <div class = "table">
                  <table>
                      <tr>
-                       <td class="tabledata"> 
-                           <img class="img-thumbnail img-fluid rounded-float-left" src= {{selling.product.image}} alt="Image Not Found">
+                       <td class="tabledata img-col"> 
+                           <img class="img-thumbnail img-fluid rounded-float-left" src= {{image}}{{selling.product.image}} alt="Image Not Found">
                        </td>
                        <td class="tabledata">
                             <strong>Product ID</strong>: {{ selling.product.id }}<br>
@@ -20,8 +20,8 @@
                             <strong>Cost</strong>: ${{ selling.cost }}<br>
                             <strong>Quantity</strong>: {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}<br>
                             <strong>Description</strong>: {{selling.product.description}}
-                        
-                            <button class="btn btn-primary btn-center" href="login">Buy</button>
+                
+                            <button class="btn btn-primary btn-center" (click)="openModal(selling, sellingModal)">VIEW</button>
                         </td>
                     </tr>
     
@@ -39,4 +39,25 @@
   </div>
 </div>
 <div class="panel-footer">
+</div>
+<div id="modelWindow">
+<ng-template #sellingModal>
+    <div class="modal-header">
+        <h4 class="modal-title">EWS</h4>
+    </div>
+    <div id="sellModal"class="modal-body">
+        <img class="img-thumbnail img-fluid rounded-float-left" src= {{image}}{{selling.product.image}} alt="Image Not Found">
+        <div>Product ID: {{ selling.product.id }}</div>
+        <div>Product Name: {{ selling.product.productName }}</div>
+        <div>Cost: $ {{ selling.cost }}</div>
+        <div>Quantity:  {{ (selling.quantity > 0) ? selling.quantity:'Sold Out' }}</div>
+        <div>Description: {{selling.product.description}}</div>
+    </div>
+    <div class="modal-footer">
+        <div *ngIf ="selling.quantity > 0">
+            <button class="btn btn-primary btn-center"(click)="purchaseProduct()" id="reset"data-dismiss="reset">Buy</button>
+            <div> {{clientMessage2.message}}</div>
+        </div>
+    </div>   
+</ng-template>
 </div>
