@@ -3,11 +3,9 @@ body{
     background-size: cover;
 }
 .panel{
-    min-width: 500px;
+    min-width: 750px;
 }
-.img-col{
 
-}
 .tabledata{
     margin:250px;
     padding-top: 10px; 
