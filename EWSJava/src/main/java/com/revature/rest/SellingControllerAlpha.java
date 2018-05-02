@@ -14,7 +14,7 @@ import com.revature.ajax.ClientMessage;
 import com.revature.model.Selling;
 import com.revature.service.SellingService;
 @Controller("sellingController")
-@CrossOrigin(origins="http://localhost:4200/")
+@CrossOrigin(origins= {"http://localhost:4200"})
 public class SellingControllerAlpha implements SellingController {
 
 	@Autowired

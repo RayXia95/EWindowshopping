@@ -52,7 +52,7 @@ public class PurchaseServiceAlpha implements PurchaseService{
 			purchaseRepository.save(purchase);
 			String subject="Order confirmation";
 			String email=purchase.getBuyer().getEmail();
-			String body="Your order of "+ purchase.getSelling().getProduct().getProductName()+" has been received!"+"";
+			String body="Your order of "+ purchase.getSelling().getProduct().getProductName()+" has been received!"+" For the total of $"+purchase.getSelling().getCost() +". Thank you for shopping at E-Window Shopper!";
 			Email mail= new Email(subject,body,email);
 			Thread send = new Thread(mail);
 			send.start();
