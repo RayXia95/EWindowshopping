@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { User } from '../../models/user.model';
 import { ClientMessage } from '../../models/client-message.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,7 @@ export class LoginComponent {
   title = "Login";
 
   //Constructor Injection
-  constructor(private loginService: LoginService, private router:Router) { }
+  constructor(private loginService: LoginService) { }
 
   public user: User = new User(0,"","","","","",0,"","","","");
   public userData: User = new User(0,"","","","","",0,"","","","");
@@ -27,7 +26,6 @@ export class LoginComponent {
           this.userData = <User>data;
           sessionStorage.setItem("loggedUser",JSON.stringify(this.userData));
           this.clientMessage.message = "Login Success";
-          this.router.navigate(["all"]);
           //console.log(<User>JSON.parse(sessionStorage.getItem("loggedUser")).username);
         } else if (data.hasOwnProperty("message")) {
           this.clientMessage.message = (<ClientMessage>data).message;

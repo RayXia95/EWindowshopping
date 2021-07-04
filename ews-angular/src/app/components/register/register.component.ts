@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { User } from '../../models/user.model';
 import { ClientMessage } from '../../models/client-message.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +13,7 @@ export class RegisterComponent {
   title = "Register";
 
   //Constructor Injection
-  constructor(private loginService: LoginService, private router:Router) { }
+  constructor(private loginService: LoginService) { }
 
   public user: User = new User(0,"","","","","",0,"","","","");
   public repeatPassword: string = "";
@@ -51,7 +50,6 @@ export class RegisterComponent {
         if(data.hasOwnProperty("username")){
           this.userData = <User>data;
           sessionStorage.setItem("loggedUser",JSON.stringify(this.userData));
-          this.router.navigate(["all"]);
         } else if (data.hasOwnProperty("message")) {
           this.clientMessage.message = (<ClientMessage>data).message;
         }

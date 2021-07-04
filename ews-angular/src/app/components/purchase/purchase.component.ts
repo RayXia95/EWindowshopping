@@ -16,7 +16,7 @@ import { Selling } from '../../models/selling.model';
 export class PurchaseComponent implements OnInit{
   constructor(private purchaseService:PurchaseService, private router:Router) {}
   ngOnInit(){
-    if(sessionStorage.getItem("loggedUser")==="{}"){
+    if(sessionStorage.getItem("loggedUser")===""){
       this.router.navigate(["login"]);
     }
   }
@@ -25,7 +25,7 @@ export class PurchaseComponent implements OnInit{
   public buyer:User=JSON.parse(sessionStorage.getItem("loggedUser"));
   public product:Product= JSON.parse(sessionStorage.getItem(""));
   public selling:Selling= JSON.parse(sessionStorage.getItem("selling"));
-  public purchase:Purchase= new Purchase(0,this.currentTime = new Date(),1,this.buyer,this.selling);
+  public purchase:Purchase= new Purchase(0,this.currentTime = new Date(),2,this.buyer,this.selling);
   
   public clientMessage:ClientMessage = new ClientMessage("");
  
